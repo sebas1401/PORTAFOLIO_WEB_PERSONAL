@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto 2 | Sebastián Alonzo</title>
+  <meta name="description" content="Proyecto 2 del portafolio de Sebastián Alonzo">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            pop: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            fadeIn: "fadeIn 1.5s ease-out forwards",
+            spinSlow: "spin 10s linear infinite",
+            bounceSlow: "bounce 4s infinite",
+            wiggle: "wiggle 1s ease-in-out infinite",
+          },
+          keyframes: {
+            fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+            wiggle: {
+              "0%, 100%": { transform: "rotate(-5deg)" },
+              "50%": { transform: "rotate(5deg)" },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass {
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+    .bg-proyecto {
+      background-image: url('imagenes/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-proyecto min-h-screen text-white font-pop">
+
+  
+  <header class="text-center bg-black bg-opacity-70 p-6">
+    <h1 class="text-4xl font-bold text-yellow-400 animate-bounce">Proyecto 2</h1>
+  </header>
+
+ 
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="glass p-6 rounded-2xl shadow-lg animate-fadeIn text-center">
+      <img src="imagenes/proyecto 2/logo.png" alt="Logo Proyecto 2" class="w-40 h-40 mx-auto rounded-full mb-4 border-4 border-yellow-300 shadow-lg hover:scale-105 transition-transform duration-300">
+
+      <h2 class="text-3xl font-bold mb-2 animate-wiggle">Interfaz Gráfica Java - Traductor CMD</h2>
+      <p class="text-white/90 text-lg mb-6">
+        Proyecto desarrollado en Java con Swing, donde se diseñó una interfaz gráfica que permite ingresar comandos en inglés utilizados en CMD y obtener su traducción al español. Es útil para estudiantes o personas que inician en el uso de la consola de Windows.
+      </p>
+
+    
+      <div class="flex justify-center gap-3 flex-wrap mb-6">
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm animate-bounceSlow">Java</span>
+        <span class="bg-green-500 px-3 py-1 rounded-full text-sm animate-bounceSlow">Swing</span>
+        <span class="bg-yellow-400 px-3 py-1 rounded-full text-sm animate-bounceSlow">CMD</span>
+        <span class="bg-pink-500 px-3 py-1 rounded-full text-sm animate-bounceSlow">Traducción</span>
+      </div>
+
+    
+      <div class="relative w-full max-w-4xl mx-auto mt-8">
+        <div id="slider" class="overflow-hidden rounded-2xl shadow-lg">
+          <div id="slide-track" class="flex transition-transform duration-700">
+            <img src="imagenes/proyecto 2/1.png" class="w-full flex-shrink-0" alt="Imagen 1">
+            <img src="imagenes/proyecto 2/2.png" class="w-full flex-shrink-0" alt="Imagen 2">
+            <img src="imagenes/proyecto 2/3.png" class="w-full flex-shrink-0" alt="Imagen 3">
+            <img src="imagenes/proyecto 2/4.png" class="w-full flex-shrink-0" alt="Imagen 4">
+          </div>
+        </div>
+       
+        <div class="flex justify-center mt-4 gap-4">
+          <button onclick="prevSlide()" class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded shadow">⬅</button>
+          <button onclick="nextSlide()" class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded shadow">➡</button>
+        </div>
+      </div>
+
+     
+      <div class="mt-10 flex justify-center gap-4">
+        <a href="proyecto1.html" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded shadow-lg transition hover:scale-110">⬅ Anterior</a>
+        <a href="portafolio.html" class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded shadow-lg transition hover:scale-110">🔍 Ver Todos</a>
+        <a href="proyecto3.html" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded shadow-lg transition hover:scale-110">Siguiente ➡</a>
+      </div>
+    </section>
+  </main>
+
+ 
+  <footer class="bg-black bg-opacity-70 text-center py-4 mt-10 text-sm animate-bounceSlow">
+    <p>&copy; 2025 Sebastián Adolfo Alonzo Recinos</p>
+  </footer>
+
+  
+  <script>
+    const track = document.getElementById('slide-track');
+    let index = 0;
+    const total = track.children.length;
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      updateSlider();
+    }
+
+    setInterval(nextSlide, 6000);
+  </script>
+</body>
+</html>
