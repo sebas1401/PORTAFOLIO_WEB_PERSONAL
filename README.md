@@ -37,13 +37,6 @@ Las imágenes de cada proyecto están organizadas por carpeta dentro de `/imagen
 
 ---
 
-## Sitio Web
-
-  Puedes ver el sitio en línea aquí:  
- **[https://sebas1401.github.io/portafolio-web-personal/](https://sebas1401.github.io/portafolio-web-personal/)**  
-
----
-
 ##  Contacto
 
 - GitHub: [@sebas1401](https://github.com/sebas1401)
